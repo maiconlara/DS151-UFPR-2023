@@ -10,7 +10,6 @@ export default function App() {
         flex: 1,
         backgroundColor: "#09090A",
         justifyContent: "center",
-        alignItems: "center",
       }}
     >
       <StatusBar style="light" backgroundColor="transparent" translucent />

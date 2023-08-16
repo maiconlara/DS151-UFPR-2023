@@ -10,18 +10,12 @@ export const styles = StyleSheet.create({
     gap: 6,
     marginTop: 20,
   },
-  text: {
-    color: "#A1A1AA",
-  },
   textTitle: {
+    position: "absolute",
+    top: -40,
     color: "#A1A1AA",
     fontSize: 16,
     fontWeight: "bold",
-    bottom: 150,
   },
-  textInput: {
-    backgroundColor: "#fff",
-    width: 140,
-    borderRadius: 6,
-  },
+
 });

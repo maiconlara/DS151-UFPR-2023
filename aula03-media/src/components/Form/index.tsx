@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, View, TextInput, Button, Alert } from "react-native";
+import { Text, View, Button, Alert } from "react-native";
+import { FormInput } from "./FormInput";
 
 import { styles } from "./styles";
 
@@ -7,20 +8,13 @@ export function Form() {
   return (
     <View style={styles.container}>
       <Text style={styles.textTitle}>Calculadora de Média</Text>
-      <View style={styles.containerDiv}>
-        <Text style={styles.text}>Insira o Primeiro Numero</Text>
-        <TextInput style={styles.textInput} keyboardType='number-pad'> </TextInput>
-      </View>
-
-      <View style={styles.containerDiv}>
-        <Text style={styles.text}>Insira o Segundo Numero</Text>
-        <TextInput style={styles.textInput} keyboardType='number-pad'> </TextInput>
-      </View>
+      <FormInput text="Primeiro" />
+      <FormInput text="Segundo" />
 
       <View style={styles.containerDiv}>
         <Button
-          title="Press me"
-          color="#00D8FF"
+          title="Calcular"
+          color="#5ED3F3"
           onPress={() => Alert.alert("Sem alerta papai")}
         ></Button>
       </View>
