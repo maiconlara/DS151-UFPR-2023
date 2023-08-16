@@ -9,19 +9,19 @@ export function Form() {
       <Text style={styles.textTitle}>Calculadora de Média</Text>
       <View style={styles.containerDiv}>
         <Text style={styles.text}>Insira o Primeiro Numero</Text>
-        <TextInput style={styles.textInput}> </TextInput>
+        <TextInput style={styles.textInput} keyboardType='number-pad'> </TextInput>
       </View>
 
       <View style={styles.containerDiv}>
         <Text style={styles.text}>Insira o Segundo Numero</Text>
-        <TextInput style={styles.textInput}> </TextInput>
+        <TextInput style={styles.textInput} keyboardType='number-pad'> </TextInput>
       </View>
 
       <View style={styles.containerDiv}>
         <Button
           title="Press me"
           color="#00D8FF"
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() => Alert.alert("Sem alerta papai")}
         ></Button>
       </View>
     </View>
