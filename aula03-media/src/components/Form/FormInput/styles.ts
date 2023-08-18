@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { theme } from '../../../theme';
 
 export const styles = StyleSheet.create({
     container: {
@@ -10,11 +11,15 @@ export const styles = StyleSheet.create({
         marginTop: 20,
       },
       text: {
-        color: "#A1A1AA",
+        color: theme.colors.text_gray,
+        fontFamily: theme.fonts.medium,
       },
       textInput: {
         backgroundColor: "#fff",
-        width: 140,
+        height: 40,
+        width: '100%',
         borderRadius: 6,
+        fontFamily: theme.fonts.regular,
       },
+
 });

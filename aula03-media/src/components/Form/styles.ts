@@ -1,9 +1,12 @@
 import { StyleSheet } from "react-native";
+import { theme } from "../../theme";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
 export const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     gap: 12,
+    top: getStatusBarHeight() - 64,
   },
   containerDiv: {
     alignItems: "center",
@@ -14,8 +17,8 @@ export const styles = StyleSheet.create({
     position: "absolute",
     top: -40,
     color: "#A1A1AA",
-    fontSize: 16,
-    fontWeight: "bold",
+    fontSize: 20,
+    fontFamily: theme.fonts.regular,
   },
 
 });

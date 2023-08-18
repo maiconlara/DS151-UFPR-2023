@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Text, View, Button, Alert } from "react-native";
+import { Text, View, Alert } from "react-native";
 import { FormInput } from "./FormInput";
 import { handleIsNaN } from "../../utils/handleIsNaN";
+import { Button } from "../Button";
 
 import { styles } from "./styles";
 
@@ -19,8 +20,7 @@ export function Form() {
       <View style={styles.containerDiv}>
         <Button
           title="Calcular"
-          color="#5ED3F3"
-          onPress={() => Alert.alert(`${printMean}`)}
+          printMean={printMean}
         ></Button>
       </View>
     </View>
