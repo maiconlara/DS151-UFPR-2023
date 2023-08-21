@@ -1,7 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
+import { View, ImageBackground } from "react-native";
 
 import { Form } from "./src/components/Form";
+
+import blur from "./src/images/blur.png";
 
 import {
   useFonts,
@@ -22,18 +24,20 @@ export default function App() {
     return <AppLoading />;
   }
   return (
-    <View
+    <ImageBackground
+      source={blur}
       style={{
         flex: 1,
-        backgroundColor: theme.colors.modal_light,
+        backgroundColor: theme.colors.bg_900,
         justifyContent: "center",
         alignItems: "center",
       }}
+      imageStyle={{ position: "absolute", bottom: "-100%" }}
     >
       <StatusBar style="light" backgroundColor="transparent" translucent />
       <Form />
-      
+
       <Footer />
-    </View>
+    </ImageBackground>
   );
 }
