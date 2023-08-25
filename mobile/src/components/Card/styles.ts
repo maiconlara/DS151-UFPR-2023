@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
       shadowOffset: { width: -2, height: 2 },
       shadowOpacity: 0.2,
       shadowRadius: 3,
+      width: '45%',
     },
     icon: {
       backgroundColor: colors.blue.card,
