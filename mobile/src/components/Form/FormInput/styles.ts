@@ -12,15 +12,15 @@ export const styles = StyleSheet.create({
       },
       text: {
         color: theme.colors.text_gray,
-        fontFamily: theme.fonts.medium,
+        fontFamily: theme.fonts.roboto,
       },
       textInput: {
-        backgroundColor: "#fff",
+        backgroundColor: "#000",
         height: 40,
         width: '100%',
         maxWidth: 165,
         borderRadius: 6,
-        fontFamily: theme.fonts.regular,
+        fontFamily: theme.fonts.roboto,
       },
 
 });

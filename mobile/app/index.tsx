@@ -1,37 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { View, Text, TouchableOpacity } from "react-native";
+import { ScrollView, Text, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import {
-  useFonts,
-  Inter_400Regular,
-  Inter_500Medium,
-} from "@expo-google-fonts/inter";
-import AppLoading from "expo-app-loading";
-import { theme } from "../src/theme";
 import { styles } from "./styles";
+import { Footer } from "../src/components/Footer";
 
 export default function App() {
   const router = useRouter();
-  const [fontsLoaded] = useFonts({
-    Inter_400Regular,
-    Inter_500Medium,
-  });
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+  const { bottom, top } = useSafeAreaInsets();
   return (
-    <View
-      style={{
+    <ScrollView
+      contentContainerStyle={{
         flex: 1,
-        backgroundColor: theme.colors.bg_900,
         justifyContent: "center",
         alignItems: "center",
+        paddingBottom: bottom,
+        paddingTop: top,
       }}
     >
-        
-        
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
@@ -40,8 +26,8 @@ export default function App() {
       >
         <Text style={styles.text}>Calculadora de Média</Text>
       </TouchableOpacity>
-
-      <StatusBar style="light" backgroundColor="transparent" translucent />
-    </View>
+      
+      <Footer />
+    </ScrollView>
   );
 }

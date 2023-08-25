@@ -1,17 +1,20 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   button: {
-    borderRadius: 9999, 
-    backgroundColor: '#4275f5', 
+    borderRadius: 9999,
+    backgroundColor: "#4275f5",
     paddingHorizontal: 10,
     paddingVertical: 5,
-
   },
-  text:{
+  text: {
     fontSize: 12,
-    textTransform: 'uppercase',
-    color: 'black', 
-  }
-
+    textTransform: "uppercase",
+    color: "black",
+  },
+  container: {
+    position: "relative",
+    flex: 1,
+    backgroundColor: "#fff",
+  },
 });

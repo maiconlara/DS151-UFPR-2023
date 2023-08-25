@@ -6,12 +6,13 @@ export const styles = StyleSheet.create({
   text: {
     fontSize: 12,
     color: theme.colors.text_gray,
-    fontFamily: theme.fonts.medium, 
+    fontFamily: theme.fonts.baiBold, 
 
 
   },
   footer: {
-    position: "absolute",
-    bottom: getBottomSpace() + 32,
+    position: 'absolute',
+    bottom: getBottomSpace() + 10,
+    alignItems: 'center',
   }
 });

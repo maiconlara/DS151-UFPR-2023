@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     top: -40,
     color: "#A1A1AA",
     fontSize: 20,
-    fontFamily: theme.fonts.regular,
+    fontFamily: theme.fonts.robotoBold,
   },
 
 });
