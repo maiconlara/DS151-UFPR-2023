@@ -1,9 +1,8 @@
 import { StatusBar } from "expo-status-bar";
-import { View, ImageBackground } from "react-native";
+import { View } from "react-native";
 
-import { Form } from "./src/components/Form";
+import { Form } from "../../src/components/Form";
 
-import blur from "./src/assets/blur.png";
 
 import {
   useFonts,
@@ -11,8 +10,8 @@ import {
   Inter_500Medium,
 } from "@expo-google-fonts/inter";
 import AppLoading from "expo-app-loading";
-import { theme } from "./src/theme";
-import { Footer } from "./src/components/Footer";
+import { theme } from "../../src/theme";
+import { Footer } from "../../src/components/Footer";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,20 +23,19 @@ export default function App() {
     return <AppLoading />;
   }
   return (
-    <ImageBackground
-      source={blur}
+    <View
       style={{
         flex: 1,
         backgroundColor: theme.colors.bg_900,
         justifyContent: "center",
         alignItems: "center",
       }}
-      imageStyle={{ position: "absolute", bottom: "-100%" }}
     >
       <StatusBar style="light" backgroundColor="transparent" translucent />
       <Form />
 
       <Footer />
-    </ImageBackground>
+    </View>
   );
 }
+    
