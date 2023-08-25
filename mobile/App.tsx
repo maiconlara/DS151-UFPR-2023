@@ -3,7 +3,7 @@ import { View, ImageBackground } from "react-native";
 
 import { Form } from "./src/components/Form";
 
-import blur from "./src/images/blur.png";
+import blur from "./src/assets/blur.png";
 
 import {
   useFonts,
