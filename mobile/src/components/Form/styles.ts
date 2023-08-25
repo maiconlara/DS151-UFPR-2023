@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
-import { theme } from "../../theme";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import { fonts } from "../../fonts";
+import { colors } from "../../colors";
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,9 +17,9 @@ export const styles = StyleSheet.create({
   textTitle: {
     position: "absolute",
     top: -40,
-    color: "#A1A1AA",
+    color: colors.gray,
     fontSize: 20,
-    fontFamily: theme.fonts.robotoBold,
+    fontFamily: fonts.robotoBold,
   },
 
 });

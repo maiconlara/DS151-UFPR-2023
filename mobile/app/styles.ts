@@ -12,9 +12,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 5,
   },
-  text: {
+  buttonText: {
     fontFamily: fonts.baiBold,
-    fontSize: 12,
+    fontSize: 14,
     textTransform: "uppercase",
     color: colors.white,
   },

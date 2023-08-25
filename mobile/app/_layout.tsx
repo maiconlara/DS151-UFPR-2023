@@ -7,7 +7,6 @@ import { BaiJamjuree_700Bold } from "@expo-google-fonts/bai-jamjuree";
 import { SplashScreen, Stack } from "expo-router";
 import { View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Footer } from "../src/components/Footer";
 
 export default function Layout() {
   const [isLoadedFonts] = useFonts({
@@ -36,6 +35,14 @@ export default function Layout() {
             headerShown: false,
           }}
         />
+          <Stack.Screen
+            name="menu/index"
+            options={{
+              title: "Menu de Atividades",
+              headerTitleAlign: "center",
+              headerBackVisible: false,
+            }}
+          />
         <Stack.Screen
           name="average/index"
           options={{
@@ -43,7 +50,6 @@ export default function Layout() {
             headerTitleAlign: "center",
           }}
         />
-        {/* <Stack.Screen name="" /> */}
       </Stack>
     </View>
   );

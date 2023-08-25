@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../../theme';
+import { colors } from '../../../colors';
+import { fonts } from '../../../fonts';
 
 export const styles = StyleSheet.create({
     container: {
@@ -11,8 +12,8 @@ export const styles = StyleSheet.create({
         marginTop: 20,
       },
       text: {
-        color: theme.colors.text_gray,
-        fontFamily: theme.fonts.roboto,
+        color: colors.gray,
+        fontFamily: fonts.roboto,
       },
       textInput: {
         backgroundColor: "#000",
@@ -20,7 +21,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         maxWidth: 165,
         borderRadius: 6,
-        fontFamily: theme.fonts.roboto,
+        fontFamily: fonts.roboto,
       },
 
 });

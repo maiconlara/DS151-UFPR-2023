@@ -11,20 +11,7 @@ export default function App() {
   const router = useRouter();
   const { bottom, top } = useSafeAreaInsets();
   return (
-    // <View
-    //   style={{
-    //     paddingTop: top,
-    //     display: "flex",
-    //     flexDirection: "column",
-    //     alignItems: "center",
-    //     justifyContent: "space-between",
-    //   }}
-    // >
-    //   <Image source={maicon} style={styles.maicon} />
-    //   <Text style={styles.title}>Portifólio Mobile</Text>
 
-   
-    // </View>
     <View style={styles.container}>
     <View style={styles.titleContainer}>
     <Image source={maicon} style={{height: 200, width: 200}} />
@@ -34,10 +21,10 @@ export default function App() {
         activeOpacity={0.6}
         style={styles.button}
         onPress={() => {
-          router.push("/average");
+          router.push("/menu");
         }}
       >
-        <Text style={styles.text}>Acessar o app</Text>
+        <Text style={styles.buttonText}>Acessar o app</Text>
       </TouchableOpacity>
     <Footer />
   </View>
