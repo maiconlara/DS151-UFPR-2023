@@ -6,7 +6,7 @@ import { styles } from "./styles";
 export function Footer() {
   return (
     <View style={styles.footer}>
-      <Text style={styles.text}> Feito com ♥ por Maicon Lara </Text>
+      <Text style={styles.text}> Feito com 💙 por Maicon Lara </Text>
     </View>
   );
 }

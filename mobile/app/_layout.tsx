@@ -5,7 +5,6 @@ import {
 } from "@expo-google-fonts/roboto";
 import { BaiJamjuree_700Bold } from "@expo-google-fonts/bai-jamjuree";
 import { SplashScreen, Stack } from "expo-router";
-import { styles } from "./styles";
 import { View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Footer } from "../src/components/Footer";
@@ -21,8 +20,8 @@ export default function Layout() {
     return <SplashScreen />;
   }
   return (
-    <View style={styles.container}>
-      <StatusBar style="light" />
+    <View style={{ position: "relative", flex: 1, backgroundColor: "#f7f7f7" }}>
+      <StatusBar style="dark" translucent />
 
       <Stack
         screenOptions={{
@@ -31,15 +30,20 @@ export default function Layout() {
           },
         }}
       >
-        <Stack.Screen name="index" options={{
-            title: "Atividades Mobile",
-            headerTitleAlign: 'center',
-        }} />
-        <Stack.Screen name="average/index" options={{
+        <Stack.Screen
+          name="index"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="average/index"
+          options={{
             title: "Calculadora de Média",
-            headerTitleAlign: 'center',
-        }}/>
-        {/* <Stack.Screen name=""/> */}
+            headerTitleAlign: "center",
+          }}
+        />
+        {/* <Stack.Screen name="" /> */}
       </Stack>
     </View>
   );

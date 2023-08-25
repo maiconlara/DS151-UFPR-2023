@@ -12,7 +12,9 @@ export const styles = StyleSheet.create({
   },
   footer: {
     position: 'absolute',
-    bottom: getBottomSpace() + 10,
+    bottom: getBottomSpace() + 16,
     alignItems: 'center',
+    right: 0,
+    left: 0,
   }
 });
