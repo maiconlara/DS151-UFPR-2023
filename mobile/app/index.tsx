@@ -24,7 +24,7 @@ export default function App() {
           router.push("/menu");
         }}
       >
-        <Text style={styles.buttonText}>Acessar o app</Text>
+        <Text style={styles.buttonText}>Entrar no app</Text>
       </TouchableOpacity>
     <Footer />
   </View>

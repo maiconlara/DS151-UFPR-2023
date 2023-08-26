@@ -7,7 +7,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 const data = [
   {
     id: 1,
-    name: "Calculadora de Média",
+    name: "Calculadora Média",
     icon: "calculate",
     routerFunction: () => {
       router.push("/average");
@@ -41,7 +41,14 @@ export default function App() {
     >
       <View style={styles.container}>
         {data.map((item) => {
-          return <Card name={item.name} icon={item.icon} key={item.id} routerFunction={item.routerFunction}/>;
+          return (
+            <Card
+              name={item.name}
+              icon={item.icon}
+              key={item.id}
+              routerFunction={item.routerFunction}
+            />
+          );
         })}
       </View>
     </ScrollView>
