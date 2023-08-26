@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../src/colors";
-import { fonts } from "../src/fonts";
+import { fonts } from "../../src/fonts";
+import { colors } from "../../src/colors";
 
 export const styles = StyleSheet.create({
   button: {
     marginTop: 48,
     alignItems: "center",
-    minWidth: 'auto',
+    minWidth: "40%",
     borderRadius: 9999,
     backgroundColor: colors.blue.button,
     paddingHorizontal: 10,
@@ -21,22 +21,26 @@ export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
+    alignItems: "center",
+    justifyContent: "space-around",
     paddingHorizontal: 24,
     paddingVertical: 48,
   },
-  titleContainer: {
-    gap: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    textAlign: "center",
-    fontFamily: fonts.baiBold,
-    color: colors.blue.title,
-    textTransform: "uppercase",
+  text: {
+    fontFamily: fonts.robotoBold,
     fontSize: 48,
+    color: colors.blue.title,
   },
-
+  textContainer: {
+    gap: 24,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    paddingHorizontal: 16,
+    gap: 12,
+  },
 });

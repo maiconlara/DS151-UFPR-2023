@@ -16,7 +16,8 @@ export default function Layout() {
   });
 
   if (!isLoadedFonts) {
-    return <SplashScreen />;
+    // return <SplashScreen />;
+    return null;
   }
   return (
     <View style={{ position: "relative", flex: 1, backgroundColor: "#f7f7f7" }}>
@@ -47,6 +48,13 @@ export default function Layout() {
           name="average/index"
           options={{
             title: "Calculadora de Média",
+            headerTitleAlign: "center",
+          }}
+        />
+        <Stack.Screen
+          name="counter/index"
+          options={{
+            title: "Contador",
             headerTitleAlign: "center",
           }}
         />
