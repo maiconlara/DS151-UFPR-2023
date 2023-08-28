@@ -26,7 +26,7 @@ const data = [
     name: "Colors",
     icon: "invert-colors",
     routerFunction: () => {
-      router.push("/rgbcolors");
+      router.push("/rgbColor");
     },
   },
 ];

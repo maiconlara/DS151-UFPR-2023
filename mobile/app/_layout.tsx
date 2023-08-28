@@ -58,6 +58,13 @@ export default function Layout() {
             headerTitleAlign: "center",
           }}
         />
+        <Stack.Screen
+          name="rgbColor/index"
+          options={{
+            title: "FlatList de Cores RGB",
+            headerTitleAlign: "center",
+          }}
+        />
       </Stack>
     </View>
   );
