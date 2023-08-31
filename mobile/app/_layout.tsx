@@ -65,6 +65,13 @@ export default function Layout() {
             headerTitleAlign: "center",
           }}
         />
+        <Stack.Screen
+          name="exercicioAula05/index"
+          options={{
+            title: "Exercicio em Sala",
+            headerTitleAlign: "center",
+          }}
+        />
       </Stack>
     </View>
   );

@@ -29,6 +29,14 @@ const data = [
       router.push("/rgbColor");
     },
   },
+  {
+    id: 4,
+    name: "Exercicio Aula 05",
+    icon: "insert-photo",
+    routerFunction: () => {
+      router.push("/exercicioAula05");
+    },
+  },
 ];
 
 export default function App() {
