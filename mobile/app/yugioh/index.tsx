@@ -36,7 +36,7 @@ export default function Yugioh() {
     });
     return response.data.data[0].card_images[0].image_url;
   };
-66889139
+
   const handleCard = async () => {
     setIsLoading(true);
     const cards = await getImage();
