@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { TouchableOpacity, View, Text, ScrollView } from "react-native";
+import { View, ScrollView } from "react-native";
 import { styles } from "./styles";
 import { Card } from "../../src/components/Card";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -35,6 +35,14 @@ const data = [
     icon: "insert-photo",
     routerFunction: () => {
       router.push("/exercicioAula05");
+    },
+  },
+  {
+    id: 5,
+    name: "Yu Gi Oh! Password",
+    icon: "videogame-asset",
+    routerFunction: () => {
+      router.push("/yugioh");
     },
   },
 ];

@@ -72,6 +72,13 @@ export default function Layout() {
             headerTitleAlign: "center",
           }}
         />
+        <Stack.Screen
+          name="yugioh/index"
+          options={{
+            title: "Yu Gi Oh! Password",
+            headerTitleAlign: "center",
+          }}
+        />
       </Stack>
     </View>
   );
