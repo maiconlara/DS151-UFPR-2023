@@ -53,10 +53,6 @@ export const styles = StyleSheet.create({
     borderRadius: 6,
     fontFamily: fonts.roboto,
   },
-  card: {
-    minWidth: 164,
-    minHeight: 242,
-  },
   help: {
     justifyContent: "center",
     alignItems: "center",
@@ -74,5 +70,13 @@ export const styles = StyleSheet.create({
     color: colors.blue.card,
     fontFamily: fonts.roboto,
     fontSize: 14,
+  },
+  loading: {
+    justifyContent: "center",
+    alignItems: "center",
+    minWidth: 164,
+    minHeight: 242,
+    maxWidth: 246,
+    maxHeight: 363,
   },
 });

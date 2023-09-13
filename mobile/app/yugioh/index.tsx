@@ -8,6 +8,8 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { CardObject } from "./interface";
+import { YugiohCard } from "../../src/components/YugiohCard";
+
 import axios from "axios";
 
 import { styles } from "./styles";
@@ -30,19 +32,22 @@ export default function Yugioh() {
   };
 
   const getCard = async () => {
-    const { data } = await axios.get<CardObject>(url, {
-      validateStatus: function (status) {
-        return status < 500;
-      },
-    });
-    return data;
+    try {
+      const response = await axios.get<CardObject>(url);
+      if (response.status === 200) {
+        const { data } = response;
+        return data;
+      } else {
+      }
+    } catch (error) {
+    }
   };
 
   const handleCard = async () => {
     setIsLoading(true);
-    const image = await getCard().then((data) => { 
-      return data.data[0].card_images[0].image_url;
-    })
+    const image = await getCard().then((data) => {
+      return data?.data[0].card_images[0].image_url ?? "";
+    });
     setCard(image);
     setIsLoading(false);
   };
@@ -54,22 +59,11 @@ export default function Yugioh() {
       </TouchableOpacity>
       <View style={styles.textContainer}>
         {!isLoading ? (
-          <>
-            {card ? (
-              <Image
-                width={246}
-                height={363}
-                style={styles.card}
-                source={{
-                  uri: card,
-                }}
-              ></Image>
-            ) : (
-              <Text>Pesquise uma Carta</Text>
-            )}
-          </>
+          <YugiohCard card={card} />
         ) : (
-          <ActivityIndicator color={colors.black} />
+          <View style={styles.loading}>
+            <ActivityIndicator color={colors.black} />
+          </View>
         )}
       </View>
       <View style={styles.buttonContainer}>
