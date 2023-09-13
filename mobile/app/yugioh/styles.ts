@@ -66,6 +66,19 @@ export const styles = StyleSheet.create({
     width: 20,
     height: 20,
   },
+  deck: {
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    top: 16,
+    left: 16,
+    width: 20,
+    height: 20,
+  },
+  card: {
+    width: 20,
+    height: 25,
+  },
   helpText: {
     color: colors.blue.card,
     fontFamily: fonts.roboto,
@@ -84,4 +97,5 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     gap: 6,
   },
+ 
 });

@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { CardObject } from "./interface";
 import { YugiohCard } from "../../src/components/YugiohCard";
+import backCard from "../../src/assets/backCard.png";
 
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -16,6 +17,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from "./styles";
 import { colors } from "../../src/colors";
 import { data } from "./data";
+import { DeckModal } from "../../src/components/DeckModal";
 
 export default function Yugioh() {
   const [password, setPassword] = useState("");
@@ -23,8 +25,17 @@ export default function Yugioh() {
   const [isLoading, setIsLoading] = useState(false);
   const [value, setValue] = useState("");
   const [deck, setDeck] = useState<CardObject[]>([]);
+  const [isModalVisible, setModalVisible] = useState(false);
 
   const url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?id=${password}`;
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
+  
+
+
 
   const getRandomCard = () => {
     const randomIndex = Math.floor(Math.random() * data.length);
@@ -83,6 +94,15 @@ export default function Yugioh() {
       <TouchableOpacity style={styles.help} onPress={getRandomCard}>
         <Text style={styles.helpText}>?</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.deck} onPress={toggleModal}>
+        <Image
+          width={246}
+          height={363}
+          style={styles.card}
+          source={backCard}
+        ></Image>
+      </TouchableOpacity>
+
       <View style={styles.textContainer}>
         {!isLoading ? (
           <YugiohCard card={card} />
@@ -123,6 +143,12 @@ export default function Yugioh() {
           )}
         </View>
       </View>
+      <DeckModal
+        isModalVisible={isModalVisible}
+        toggleModal={toggleModal}
+        deck={deck}
+        setModalVisible={setModalVisible}
+      />
     </View>
   );
 }
