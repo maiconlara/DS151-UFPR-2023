@@ -10,6 +10,7 @@ import {
 import { CardObject } from "./interface";
 import { YugiohCard } from "../../src/components/YugiohCard";
 import backCard from "../../src/assets/backCard.png";
+import deckCard from "../../src/assets/deckCard.png";
 
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -32,10 +33,6 @@ export default function Yugioh() {
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
-
-  
-
-
 
   const getRandomCard = () => {
     const randomIndex = Math.floor(Math.random() * data.length);
@@ -64,6 +61,12 @@ export default function Yugioh() {
     setIsLoading(false);
   };
 
+  const handleSelectedCard = async () => {
+    setIsLoading(true);
+    await addToDeck();
+    setCard("");
+    setIsLoading(false);
+  };
   const storeData = async (value: CardObject[]) => {
     try {
       const jsonValue = JSON.stringify(value);
@@ -77,16 +80,15 @@ export default function Yugioh() {
 
       if (newCard) {
         setDeck((prevDeck) => [...prevDeck, newCard]);
-        await storeData([...deck, newCard]);
       }
     } catch (error) {}
   };
 
-  const handleSelectedCard = async () => {
-    setIsLoading(true);
-    await addToDeck();
-    setCard("");
-    setIsLoading(false);
+  const createDeck = async () => {
+    try {
+      await storeData(deck);
+      toggleModal();
+    } catch (error) {}
   };
 
   return (
@@ -96,10 +98,10 @@ export default function Yugioh() {
       </TouchableOpacity>
       <TouchableOpacity style={styles.deck} onPress={toggleModal}>
         <Image
-          width={246}
-          height={363}
+          width={210}
+          height={210}
           style={styles.card}
-          source={backCard}
+          source={deckCard}
         ></Image>
       </TouchableOpacity>
 
@@ -148,6 +150,7 @@ export default function Yugioh() {
         toggleModal={toggleModal}
         deck={deck}
         setModalVisible={setModalVisible}
+        createDeck={createDeck}
       />
     </View>
   );

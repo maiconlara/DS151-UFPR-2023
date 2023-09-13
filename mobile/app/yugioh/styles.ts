@@ -76,8 +76,8 @@ export const styles = StyleSheet.create({
     height: 20,
   },
   card: {
-    width: 20,
-    height: 25,
+    width: 35,
+    height: 35,
   },
   helpText: {
     color: colors.blue.card,

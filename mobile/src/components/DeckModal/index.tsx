@@ -9,6 +9,7 @@ interface ModalProps {
   toggleModal: () => void;
   deck: CardObject[];
   setModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  createDeck: () => void;
 }
 
 export function DeckModal({
@@ -16,6 +17,7 @@ export function DeckModal({
   toggleModal,
   deck,
   setModalVisible,
+  createDeck,
 }: ModalProps) {
   return (
     <View style={styles.modalContainer}>
@@ -35,12 +37,12 @@ export function DeckModal({
             <View style={styles.modalButtonContainer}>
               <TouchableOpacity
                 style={styles.modalButton}
-                onPress={toggleModal}
+                onPress={createDeck}
               >
                 <Text style={styles.modalButtonText}>Sim</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.modalButton} onPress={() => {}}>
+              <TouchableOpacity style={styles.modalButton} onPress={toggleModal}>
                 <Text style={styles.modalButtonText}>Não</Text>
               </TouchableOpacity>
             </View>
