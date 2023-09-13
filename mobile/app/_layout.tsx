@@ -79,6 +79,13 @@ export default function Layout() {
             headerTitleAlign: "center",
           }}
         />
+        <Stack.Screen
+          name="yugiohDeck/index"
+          options={{
+            title: "Yu Gi Oh! Deck",
+            headerTitleAlign: "center",
+          }}
+        />
       </Stack>
     </View>
   );

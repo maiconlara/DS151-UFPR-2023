@@ -11,6 +11,7 @@ import { CardObject } from "./interface";
 import { YugiohCard } from "../../src/components/YugiohCard";
 
 import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { styles } from "./styles";
 import { colors } from "../../src/colors";
@@ -53,17 +54,22 @@ export default function Yugioh() {
     setIsLoading(false);
   };
 
+  const storeData = async (value: CardObject[]) => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem("deck", jsonValue);
+    } catch (e) {}
+  };
 
   const addToDeck = async () => {
     try {
       const newCard: CardObject | undefined = await getCard();
 
       if (newCard) {
-        setDeck([...deck, newCard]);
+        setDeck((prevDeck) => [...prevDeck, newCard]);
+        await storeData([...deck, newCard]);
       }
     } catch (error) {}
-
-
   };
 
   const handleSelectedCard = async () => {
@@ -72,9 +78,6 @@ export default function Yugioh() {
     setCard("");
     setIsLoading(false);
   };
-
-
-
 
   return (
     <View style={styles.container}>

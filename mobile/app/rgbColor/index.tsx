@@ -14,6 +14,7 @@ export default function rgbColor() {
   const initialColors: string[] = [];
 
   const [colors, setColors] = useState(initialColors);
+  
   const addColor = () => {
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);

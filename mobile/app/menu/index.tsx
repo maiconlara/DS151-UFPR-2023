@@ -50,7 +50,7 @@ const data = [
     name: "Yu Gi Oh! Deck",
     icon: "videogame-asset",
     routerFunction: () => {
-      router.push({ pathname: "yugioh-deck", params: { deck: [] }});
+      router.push("/yugiohDeck");
     },
   },
 ];
