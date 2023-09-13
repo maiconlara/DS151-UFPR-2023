@@ -45,6 +45,14 @@ const data = [
       router.push("/yugioh");
     },
   },
+  {
+    id: 6,
+    name: "Yu Gi Oh! Deck",
+    icon: "videogame-asset",
+    routerFunction: () => {
+      router.push({ pathname: "yugioh-deck", params: { deck: [] }});
+    },
+  },
 ];
 
 export default function App() {

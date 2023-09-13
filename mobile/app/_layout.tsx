@@ -4,7 +4,7 @@ import {
   Roboto_700Bold,
 } from "@expo-google-fonts/roboto";
 import { BaiJamjuree_700Bold } from "@expo-google-fonts/bai-jamjuree";
-import { SplashScreen, Stack } from "expo-router";
+import { Stack } from "expo-router";
 import { View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 

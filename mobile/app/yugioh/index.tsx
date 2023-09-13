@@ -21,6 +21,7 @@ export default function Yugioh() {
   const [card, setCard] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [value, setValue] = useState("");
+  const [deck, setDeck] = useState<CardObject[]>([]);
 
   const url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?id=${password}`;
 
@@ -29,6 +30,7 @@ export default function Yugioh() {
     const randomCard = data[randomIndex].password;
     setValue(randomCard.toString());
     setPassword(randomCard.toString());
+    console.log(deck);
   };
 
   const getCard = async () => {
@@ -39,8 +41,7 @@ export default function Yugioh() {
         return data;
       } else {
       }
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   const handleCard = async () => {
@@ -51,6 +52,29 @@ export default function Yugioh() {
     setCard(image);
     setIsLoading(false);
   };
+
+
+  const addToDeck = async () => {
+    try {
+      const newCard: CardObject | undefined = await getCard();
+
+      if (newCard) {
+        setDeck([...deck, newCard]);
+      }
+    } catch (error) {}
+
+
+  };
+
+  const handleSelectedCard = async () => {
+    setIsLoading(true);
+    await addToDeck();
+    setCard("");
+    setIsLoading(false);
+  };
+
+
+
 
   return (
     <View style={styles.container}>
@@ -66,7 +90,7 @@ export default function Yugioh() {
           </View>
         )}
       </View>
-      <View style={styles.buttonContainer}>
+      <View style={styles.formContainer}>
         <TextInput
           placeholder="ex. 54752875"
           style={styles.textInput}
@@ -78,13 +102,24 @@ export default function Yugioh() {
         >
           {value}
         </TextInput>
-        <TouchableOpacity
-          activeOpacity={0.6}
-          style={styles.button}
-          onPress={handleCard}
-        >
-          <Text style={styles.buttonText}>Buscar</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            activeOpacity={0.6}
+            style={styles.button}
+            onPress={handleCard}
+          >
+            <Text style={styles.buttonText}>Buscar</Text>
+          </TouchableOpacity>
+          {card && (
+            <TouchableOpacity
+              activeOpacity={0.6}
+              style={styles.button}
+              onPress={handleSelectedCard}
+            >
+              <Text style={styles.buttonText}>Escolher</Text>
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
     </View>
   );

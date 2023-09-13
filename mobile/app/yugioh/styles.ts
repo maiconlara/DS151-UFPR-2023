@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  buttonContainer: {
+  formContainer: {
     flexDirection: "column",
     flexWrap: "wrap",
     justifyContent: "center",
@@ -74,9 +74,14 @@ export const styles = StyleSheet.create({
   loading: {
     justifyContent: "center",
     alignItems: "center",
-    minWidth: 164,
-    minHeight: 242,
-    maxWidth: 246,
-    maxHeight: 363,
+    width: 246,
+    height: 363,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 6,
   },
 });
