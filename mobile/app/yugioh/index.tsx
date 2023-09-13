@@ -7,6 +7,7 @@ import {
   Image,
   ActivityIndicator,
 } from "react-native";
+import { CardObject } from "./interface";
 import axios from "axios";
 
 import { styles } from "./styles";
@@ -28,19 +29,21 @@ export default function Yugioh() {
     setPassword(randomCard.toString());
   };
 
-  const getImage = async () => {
-    const response = await axios.get(url, {
+  const getCard = async () => {
+    const { data } = await axios.get<CardObject>(url, {
       validateStatus: function (status) {
         return status < 500;
       },
     });
-    return response.data.data[0].card_images[0].image_url;
+    return data;
   };
 
   const handleCard = async () => {
     setIsLoading(true);
-    const cards = await getImage();
-    setCard(cards);
+    const image = await getCard().then((data) => { 
+      return data.data[0].card_images[0].image_url;
+    })
+    setCard(image);
     setIsLoading(false);
   };
 
