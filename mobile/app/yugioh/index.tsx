@@ -31,7 +31,6 @@ export default function Yugioh() {
     const randomCard = data[randomIndex].password;
     setValue(randomCard.toString());
     setPassword(randomCard.toString());
-    console.log(deck);
   };
 
   const getCard = async () => {
