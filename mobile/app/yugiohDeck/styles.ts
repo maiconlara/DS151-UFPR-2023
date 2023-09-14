@@ -11,10 +11,6 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingBottom: 12,
   },
-  card: {
-    marginTop: 8,
-    maxWidth: 82,
-    maxHeight: 121,
-  },
+
 
 });

@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 import { CardObject } from "../yugioh/interface";
+import { DeckCard } from "../../src/components/DeckCard";
 
 export default function App() {
   const { bottom, top } = useSafeAreaInsets();
@@ -31,15 +32,7 @@ export default function App() {
       <View style={styles.container}>
         {data.map((item, index) => {
           return (
-            <Image
-              key={index}
-              width={246}
-              height={363}
-              style={styles.card}
-              source={{
-                uri: item.data[0].card_images[0].image_url,
-              }}
-            ></Image>
+           <DeckCard cardInfo={item} key={index}/>
           );
         })}
       </View>
