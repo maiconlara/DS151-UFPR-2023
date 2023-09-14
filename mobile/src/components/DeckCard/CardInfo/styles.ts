@@ -15,9 +15,10 @@ export const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: "white",
+    // backgroundColor: "#ccb37a",
     borderRadius: 12,
-    padding: 24,
+    paddingBottom: 24,
+    paddingHorizontal: 24,
     alignItems: "center",
     elevation: 5,
     shadowColor: "#000",
@@ -34,11 +35,17 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: fonts.roboto,
   },
+  modalTitle: {
+    marginBottom: 4,
+    fontSize: 18,
+    textAlign: "center",
+    fontFamily: fonts.baiBold,
+  },
   modalButtonContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
-    marginTop: 20,
+    marginTop: 4,
     gap: 16,
   },
   modalButton: {
@@ -51,13 +58,14 @@ export const styles = StyleSheet.create({
   },
   modalButtonText: {
     fontFamily: fonts.baiBold,
-    color: colors.blue.button,
+    color: colors.black,
     fontSize: 16,
     textAlign: "center",
     textTransform: "uppercase",
   },
   modalCard: {
-    maxWidth: 250,
-    maxHeight: 250,
+    marginBottom: 20,
+    width: 250,
+    height: 250,
   },
 });

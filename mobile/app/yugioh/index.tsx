@@ -22,13 +22,14 @@ import { DeckModal } from "../../src/components/DeckModal";
 
 export default function Yugioh() {
   const [password, setPassword] = useState("");
-  const [card, setCard] = useState("");
+  const [card, setCard] = useState<CardObject>();
   const [isLoading, setIsLoading] = useState(false);
   const [value, setValue] = useState("");
   const [deck, setDeck] = useState<CardObject[]>([]);
   const [isModalVisible, setModalVisible] = useState(false);
-
   const url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?id=${password}`;
+
+  const cardImage = card?.data[0].card_images[0].image_url ?? "";
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
@@ -54,17 +55,15 @@ export default function Yugioh() {
 
   const handleCard = async () => {
     setIsLoading(true);
-    const image = await getCard().then((data) => {
-      return data?.data[0].card_images[0].image_url ?? "";
-    });
-    setCard(image);
+    const handledCard = await getCard();
+    setCard(handledCard);
     setIsLoading(false);
   };
 
   const handleSelectedCard = async () => {
     setIsLoading(true);
     await addToDeck();
-    setCard("");
+    setCard(undefined);
     setIsLoading(false);
   };
   const storeData = async (value: CardObject[]) => {
@@ -76,10 +75,8 @@ export default function Yugioh() {
 
   const addToDeck = async () => {
     try {
-      const newCard: CardObject | undefined = await getCard();
-
-      if (newCard) {
-        setDeck((prevDeck) => [...prevDeck, newCard]);
+      if (card) {
+        setDeck((prevDeck) => [...prevDeck, card]);
       }
     } catch (error) {}
   };
@@ -94,7 +91,7 @@ export default function Yugioh() {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.random} onPress={getRandomCard}>
-      <Image
+        <Image
           width={210}
           height={210}
           style={styles.block}
@@ -112,7 +109,7 @@ export default function Yugioh() {
 
       <View style={styles.textContainer}>
         {!isLoading ? (
-          <YugiohCard card={card} />
+          <YugiohCard card={cardImage} />
         ) : (
           <View style={styles.loading}>
             <ActivityIndicator color={colors.black} />
@@ -139,7 +136,7 @@ export default function Yugioh() {
           >
             <Text style={styles.buttonText}>Buscar</Text>
           </TouchableOpacity>
-          {card && (
+          {cardImage && (
             <TouchableOpacity
               activeOpacity={0.6}
               style={styles.button}
