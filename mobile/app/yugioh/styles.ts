@@ -53,18 +53,19 @@ export const styles = StyleSheet.create({
     borderRadius: 6,
     fontFamily: fonts.roboto,
   },
-  help: {
+  random: {
+    marginLeft: 4,
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
     top: 16,
     right: 16,
-    backgroundColor: "transparent",
-    borderWidth: 1,
-    borderColor: colors.blue.card,
-    borderRadius: 9999,
     width: 20,
     height: 20,
+  },
+  block: {
+    width: 30,
+    height: 30,
   },
   deck: {
     justifyContent: "center",
@@ -76,13 +77,8 @@ export const styles = StyleSheet.create({
     height: 20,
   },
   card: {
-    width: 35,
-    height: 35,
-  },
-  helpText: {
-    color: colors.blue.card,
-    fontFamily: fonts.roboto,
-    fontSize: 14,
+    width: 40,
+    height: 40,
   },
   loading: {
     justifyContent: "center",
@@ -97,5 +93,4 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     gap: 6,
   },
- 
 });

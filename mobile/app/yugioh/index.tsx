@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { CardObject } from "./interface";
 import { YugiohCard } from "../../src/components/YugiohCard";
-import backCard from "../../src/assets/backCard.png";
+import randomBlock from "../../src/assets/randomBlock.webp";
 import deckCard from "../../src/assets/deckCard.png";
 
 import axios from "axios";
@@ -93,8 +93,13 @@ export default function Yugioh() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.help} onPress={getRandomCard}>
-        <Text style={styles.helpText}>?</Text>
+      <TouchableOpacity style={styles.random} onPress={getRandomCard}>
+      <Image
+          width={210}
+          height={210}
+          style={styles.block}
+          source={randomBlock}
+        ></Image>
       </TouchableOpacity>
       <TouchableOpacity style={styles.deck} onPress={toggleModal}>
         <Image
