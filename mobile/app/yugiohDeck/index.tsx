@@ -27,6 +27,7 @@ export default function App() {
     <ScrollView
       contentContainerStyle={{
         paddingBottom: bottom,
+        alignItems: "center",
       }}
     >
       <View style={styles.container}>

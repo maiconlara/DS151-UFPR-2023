@@ -7,7 +7,6 @@ import { CardInfo } from "./CardInfo";
 
 interface DeckCardProps {
   cardInfo: CardObject;
-
 }
 
 export function DeckCard({ cardInfo }: DeckCardProps) {
@@ -18,7 +17,7 @@ export function DeckCard({ cardInfo }: DeckCardProps) {
   };
 
   return (
-    <View style={styles.container}>
+    <>
       <TouchableOpacity onPress={toggleModal}>
         <Image
           width={246}
@@ -35,6 +34,6 @@ export function DeckCard({ cardInfo }: DeckCardProps) {
         setModalVisible={setModalVisible}
         cardInfo={cardInfo}
       />
-    </View>
+    </>
   );
 }
