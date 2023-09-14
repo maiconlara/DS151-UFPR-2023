@@ -7,7 +7,7 @@ import { CardObject } from "../yugioh/interface";
 import { DeckCard } from "../../src/components/DeckCard";
 
 export default function App() {
-  const { bottom, top } = useSafeAreaInsets();
+  const { bottom} = useSafeAreaInsets();
   const [data, setData] = useState<CardObject[]>([]);
 
   useEffect(() => {
@@ -16,8 +16,7 @@ export default function App() {
         const jsonValue = await AsyncStorage.getItem("deck");
         const parsedData = jsonValue != null ? JSON.parse(jsonValue) : [];
         setData(parsedData);
-      } catch (e) {
-      }
+      } catch (e) {}
     };
 
     fetchData();
@@ -27,14 +26,11 @@ export default function App() {
     <ScrollView
       contentContainerStyle={{
         paddingBottom: bottom,
-        alignItems: "center",
       }}
     >
       <View style={styles.container}>
         {data.map((item, index) => {
-          return (
-           <DeckCard cardInfo={item} key={index}/>
-          );
+          return <DeckCard cardInfo={item} key={index} />;
         })}
       </View>
     </ScrollView>

@@ -2,13 +2,15 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingTop: 8,
     flexDirection: "row",
-    justifyContent: "center", //try to make itens start from left
+    // justifyContent: "center", //try to make itens start from left
     alignItems: "center",
-    gap: 12,
+    gap: 0.5,
     flexWrap: "wrap",
-    paddingHorizontal: 32,
+    paddingHorizontal: 12,
     paddingBottom: 12,
   },
+
 });

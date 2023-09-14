@@ -1,10 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {},
   card: {
-    marginTop: 8,
-    maxWidth: 82,
-    maxHeight: 121,
+    // marginTop: 8,
+    width: 82,
+    height: 121,
   },
 });

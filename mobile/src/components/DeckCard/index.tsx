@@ -18,7 +18,7 @@ export function DeckCard({ cardInfo }: DeckCardProps) {
 
   return (
     <>
-      <TouchableOpacity onPress={toggleModal}>
+      <TouchableOpacity onPress={toggleModal} activeOpacity={0.6} >
         <Image
           width={246}
           height={363}
