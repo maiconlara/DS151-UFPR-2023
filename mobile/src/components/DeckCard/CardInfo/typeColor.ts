@@ -1,8 +1,9 @@
 export const typeColor = (type: string) => {
   switch (type) {
     case "Normal Monster":
-      return "#FDE68A";333
-      
+      return "#FDE68A";
+    case "Flip Effect Monster":
+        return "#f0af65";
     case "Effect Monster":
       return "#f0af65";
     case "Ritual Monster":
