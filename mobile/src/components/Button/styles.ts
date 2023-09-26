@@ -1,20 +1,21 @@
 import { StyleSheet } from "react-native";
 import { colors } from "../../colors";
+import { fonts } from "../../fonts";
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#5ED3F3", // Background color
-    borderRadius: 8,
-    padding: 8,
     alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    gap: 8,
+    minWidth: "auto",
+    borderRadius: 9999,
+    backgroundColor: colors.blue.button,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
   text: {
     color: colors.white,
-    fontSize: 18,
-    textTransform: 'uppercase',
-    fontWeight: '400',
+    fontSize: 14,
+    textTransform: "uppercase",
+    fontWeight: "400",
+    fontFamily: fonts.baiBold,
   },
 });

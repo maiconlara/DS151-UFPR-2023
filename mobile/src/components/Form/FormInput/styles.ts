@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
         fontFamily: fonts.roboto,
       },
       textInput: {
-        backgroundColor: "#000",
+        backgroundColor: "#fff",
         height: 40,
         width: '100%',
         maxWidth: 165,
