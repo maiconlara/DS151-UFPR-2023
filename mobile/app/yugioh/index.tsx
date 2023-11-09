@@ -37,9 +37,9 @@ export default function Yugioh() {
 
   const getRandomCard = () => {
     const randomIndex = Math.floor(Math.random() * data.length);
-    const randomCard = data[randomIndex].password;
-    setValue(randomCard.toString());
-    setPassword(randomCard.toString());
+    const randomCard = data[randomIndex].password.toString();
+    setValue(randomCard);
+    setPassword(randomCard);
   };
 
   const getCard = async () => {
